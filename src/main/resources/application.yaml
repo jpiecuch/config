@@ -13,4 +13,7 @@ spring:
       password: welcome
 logging:
   level:
-    ROOT: error
+    ROOT: info
+  file:
+    max-history: 2
+  path: logs
