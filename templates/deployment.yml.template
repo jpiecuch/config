@@ -19,6 +19,14 @@ spec:
         image: jpiecuch/config:${COMMIT_ID}
         ports:
         - containerPort: 8081
+        volumeMounts:
+        - name: config-filebeat-volume
+          mountPath: /etc/filebeat/filebeat.yml
+          subPath: filebeat.yml
         env:
           - name: LOGGING_LEVEL_ROOT
             value: info
+      volumes:
+      - name: config-filebeat-volume
+        configMap:
+        ame: config-filebeat-config
