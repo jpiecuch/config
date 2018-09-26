@@ -21,7 +21,7 @@ spec:
         - containerPort: 8081
         volumeMounts:
         - name: config-filebeat-volume
-          mountPath: /etc/filebeat/filebeat.yml
+          mountPath: /etc/filebeat
           subPath: filebeat.yml
         env:
           - name: LOGGING_LEVEL_ROOT
